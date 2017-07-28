@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Diver</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ diver.Id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ diver.Libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ diver.Description }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ diver.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('divers_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('divers_edit', { 'Id': diver.Id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

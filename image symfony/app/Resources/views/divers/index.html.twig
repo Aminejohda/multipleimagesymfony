@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Divers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for diver in divers %}
+            <tr>
+                <td><a href="{{ path('divers_show', { 'Id': diver.Id }) }}">{{ diver.Id }}</a></td>
+                <td>{{ diver.Libelle }}</td>
+                <td>{{ diver.Description }}</td>
+                <td>{{ diver.Email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('divers_show', { 'Id': diver.Id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('divers_edit', { 'Id': diver.Id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('divers_new') }}">Create a new diver</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+image_product:
+    resource: "@ImageBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+image_homepage:
+    path:     /
+    defaults: { _controller: ImageBundle:Default:index }
+    
+image_divers:
+    resource: "@ImageBundle/Resources/config/routing/divers.yml"
+    prefix:   /divers

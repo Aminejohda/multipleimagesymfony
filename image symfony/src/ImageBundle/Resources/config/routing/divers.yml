@@ -1,0 +1,24 @@
+divers_index:
+    path:     /
+    defaults: { _controller: "ImageBundle:Divers:index" }
+    methods:  GET
+
+divers_show:
+    path:     /{Id}/show
+    defaults: { _controller: "ImageBundle:Divers:show" }
+    methods:  GET
+
+divers_new:
+    path:     /new
+    defaults: { _controller: "ImageBundle:Divers:new" }
+    methods:  [GET, POST]
+
+divers_edit:
+    path:     /{Id}/edit
+    defaults: { _controller: "ImageBundle:Divers:edit" }
+    methods:  [GET, POST]
+
+divers_delete:
+    path:     /{Id}/delete
+    defaults: { _controller: "ImageBundle:Divers:delete" }
+    methods:  DELETE
